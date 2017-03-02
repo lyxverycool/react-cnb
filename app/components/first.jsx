@@ -39,7 +39,7 @@ export default class First extends Component{
             <div className="title ">
                   不同角色，各有收益
                 </div>            
-            <div className="people flex flex-pack-justify">
+            <div className="people flex flex-justify-around">
               <div className="content">
                 <img src="images/sec_img_1.png" />
               </div>
@@ -55,7 +55,7 @@ export default class First extends Component{
               <div className="title">
                 <span>我们因何不同？</span>
               </div>
-              <div className="row flex flex-pack-justify" >           
+              <div className="row flex flex-justify-around" >           
                  <div className="row-left">            
                      <span>经验使我们更卓越</span><br/>                 
                     20年人力资源外包服务经验<br/>
@@ -65,20 +65,19 @@ export default class First extends Component{
                 <img src="images/sec_img_4.png"/>
               </div>
               </div>
-              <div className="row flex flex-pack-justify">             
+              <div className="row flex flex-justify-around">             
               <div className="row-right">
                 <img src="images/sec_img_5.png"/>
               </div>
               <div className="row-left ">
-                <span>
-                    线下实力让服务更可靠</span><br/>
+                <span>线下实力服务更可靠</span>
                   庞大的线下服务<br/>
                     专家级顾问，提供灵活性方案<br/>
                     覆盖全国500多个城市          
                  </div>
              </div>
             
-             <div className="row flex flex-pack-justify" >
+             <div className="row flex flex-justify-around" >
                  <div className="row-left ">
                     <span>大而全，小而准</span><br/>
                     
@@ -90,7 +89,7 @@ export default class First extends Component{
               </div>
 
               </div>
-              <div className="row flex flex-pack-justify">
+              <div className="row flex flex-justify-around">
                 
               <div className="row-right">
                 <img src="images/sec_img_7.png"/>

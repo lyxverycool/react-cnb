@@ -13,6 +13,7 @@ require ("../style/common.css");
 require ("../style/index.css");
 require ("../style/plate.css");
 
+
 class Main extends Component {
     render() {
         return (

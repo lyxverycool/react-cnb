@@ -6,6 +6,10 @@
 			padding: 0;
 			font-family: '微软雅黑 Regular', '微软雅黑';
 			overflow-x: hidden;
+			-ms-text-size-adjust: 100%;
+		   -webkit-text-size-adjust: 100%;
+		   text-size-adjust: 100%;
+		   -webkit-overflow-scrolling:touch;
 		}
 		
 		img {
@@ -67,11 +71,16 @@
 			    -ms-flex-pack: distribute;
 			        justify-content: space-around;
 			overflow-x: hidden;
+			-webkit-appearance:none;
+			-webkit-transform-style: preserve-3d; 
+			-webkit-backface-visibility:hidden;
 		}
 		footer a{
 			color:#fff;
 			cursor: pointer;
 			text-decoration: none;
+			-webkit-transform-style: preserve-3d; 
+			-webkit-backface-visibility:hidden;
 		}
 		footer a:hover{
 			text-decoration: underline;
@@ -262,6 +271,8 @@
 .flex-align-center{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
 .flex-pack-center{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}
 .flex-pack-justify{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
+.flex-justify-around{-webkit-justify-content:space-around; -ms-flex-pack:distribute; justify-content:space-around;}
+
 /*webkit表单输入框placeholder的颜色*/
 /*input::-webkit-input-placeholder{color:#AAAAAA;}
 input:focus::-webkit-input-placeholder{color:#EEEEEE;}*/

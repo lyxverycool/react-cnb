@@ -8,10 +8,7 @@ export default class Plate extends Component{
    	 super();
    }
    render(){
-   		const plate=[
-			{id:'0',plateTitle:'工作台',plateContent:'这是工作台的详情页'},
-			{id:'1',plateTitle:'企业管理',plateContent:'这是企业管理的详情页'}
-		];
+   		
    	  return(
    	  	<div>
    	  		<Common title="企业平台"/>
@@ -30,19 +27,19 @@ export default class Plate extends Component{
 					<div className="list">
 			          在这里，你可以做到...
 			    	</div>
-					<div className="box flex flex-pack-justify">
-						<Link to="/details" className="boxs flex flex-v" >						
+					<div className="box flex flex-justify-around">
+						<Link to="/details/1" className="boxs flex flex-v" >						
 							<b>工作台</b><br/>
 							<span>有序工作不延误<br/>有章可循不遗漏</span>
 							<img src="../images/p1.jpg"/>							
 						</Link>
-						<Link to="/details" className="boxs flex flex-v">						
+						<Link to="/details/2" className="boxs flex flex-v">						
 							<b>企业管理</b><br/>
 							<span>更快导入部门信息<br/>轻松应对组织变化</span>
 							<img src="../images/p2.jpg"/>							
 						</Link>
 					</div>
-					<div className="box flex flex-pack-justify">
+					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>员工管理</b><br/>
 							<span>人事信息简单录入<br/>各类证件按需调取</span>
@@ -54,7 +51,7 @@ export default class Plate extends Component{
 							<img src="../images/p4.jpg"/>
 						</div>				
 					</div>
-					<div className="box flex flex-pack-justify">
+					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>员工家园</b><br/>
 							<span>查询互动更便捷<br/>薪福信息更透明</span>
@@ -69,7 +66,7 @@ export default class Plate extends Component{
 					<div className="list">
 			        		我们为你达成......	      			
 			      	</div>
-					<div className="box flex flex-pack-justify">
+					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>安全</b><br/>
 							<span>银行级安全防护<br/>数据多重备份</span><br/>
@@ -80,7 +77,7 @@ export default class Plate extends Component{
 							<span>确保薪资核算<br/>覆盖全国主要城市<br/>平台实时维护</span>	
 						</div>				
 					</div>
-					<div className="box flex flex-pack-justify">
+					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>定制化</b><br/>
 							<span>按需组合功能模块<br/>各种报表自定义生成</span>					

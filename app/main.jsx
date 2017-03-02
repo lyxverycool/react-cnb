@@ -12,12 +12,13 @@ import Details from './components/details';
 require ("./style/common.css");
 require ("./style/index.css");
 require ("./style/plate.css");
+require ("./style/test.scss");
 
 class Main extends Component {
     render() {
-        return (
-            <div>{this.props.children}</div>
-        );
+      return (
+          <div>{this.props.children}</div>
+      );
     }
 };
 const route =(
@@ -30,14 +31,14 @@ const route =(
 	    	   <Route path="/contact" component={Contact}/>
 	    	   <Route path="/fun" component={Fun}/>
 	    	   <Route path="/list" component={List}/>
-           <Route path="/details" component={Details}/>  
+           <Route path="/details/:id" component={Details}/>  
   	   </Route>
   	</Router>
 )
 ReactDOM.render(	
-	<div>
-        {route}
-    </div>,
+	 <div>
+      {route}
+   </div>,
   document.getElementById('app')
 );
 
