@@ -61,7 +61,7 @@ export default class Plate extends Component{
 							<b>权限管理</b><br/>
 							<span>多角色账号自动切换<br/>自定义账号功能</span>
 							<img src="../images/p6.jpg"/>
-						</div>				
+						</div>			
 					</div>
 					<div className="list">
 			        		我们为你达成......	      			

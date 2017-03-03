@@ -6,3 +6,21 @@
 		text-decoration: none;
 	}
 }
+.list-text{
+	width:100%;
+	height:4.5rem;
+	border-bottom:1px solid #ccc;
+	padding:0.5rem;
+	.list-author{
+		height:1.5rem;
+		font-size:0.8rem;
+		color:#CD4F39;
+	}
+	.list-title{
+		font-size:0.6rem;
+	}
+	.list-date{
+		text-align:right;
+		font-size:0.5rem;
+	}
+}

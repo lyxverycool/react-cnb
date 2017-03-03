@@ -1,36 +1,50 @@
 import React,{Component} from 'react';
 import Common from './common';
 import Tool from './tool';
+import 'whatwg-fetch';
+require('es6-promise').polyfill();
+//fuck,ios,android低版本不支持fetch,用whatwg-fetch但是貌似不支持safari;
+
 export default class List extends Component{
 	constructor(props){
 		super(props)
+		this.state={
+			json:[],
+			display:'block'
+		}
 	}
-	getAjax(){
-		$.ajax({
-	        url:'http://datainfo.duapp.com/shopdata/getGoods.php',
-	        dataType:'jsonp',
-	        async:false,
-	        success:function(data){
-	        	console.log(data)
-	            var html="";
-	            $.each(data,function(i) {
-	                html+="<div class='flex'><img class='pic' src='"+data[i].goodsListImg+"'/><div class='name'>"+data[i].className+"</div><div class='num'>"+data[i].goodsID+"</div></div>"
-	            });
-	            $(".container").append(html);     
-	        },
-	        error:function (XMLHttpRequest, textStatus, errorThrown){   
-	           alert(XMLHttpRequest);   
-	        } 
-	    })
+	componentDidMount(){
+		fetch('//offline-news-api.herokuapp.com/stories')
+		  .then(function(response) {
+		    return response.json()
+		  }).then(function(res) {
+		    console.log(res)
+		    this.setState({
+					json:res,
+					display:'none'
+			})
+		  }.bind(this)).catch(function(ex) {
+		    console.log('parsing failed', ex)
+		})
 	}
 	render() {
+		let lists=this.state.json;
+		let display=this.state.display;
 		return (
 			<div>
+				<div className="loading" style={{display:display}}></div>
 				<Common title="列表页"/>
 				<div className="container">
-					<button onClick={this.getAjax.bind(this)} style={{cursor:"pointer"}}>点我</button>
-					<div className="listTest">
-	
+					<div className="lists-text">
+						{lists.map(
+			               (list,i)=>{
+			               	  return <div className="list-text" key={i}>
+										<div className="list-author flex flex-pack-justify flex-align-center">{list.author}</div>
+										<div className="list-title flex flex-pack-justify flex-align-center">{list.title}</div>
+										<div className="list-date ">{list.date}</div>
+							   </div>		                
+			               }
+			            )}						
 					</div>
 				</div>
 			</div>
