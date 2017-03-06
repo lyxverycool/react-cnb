@@ -20,7 +20,6 @@ export default class Details extends Component{
          	})   			
 		}
 		else if(Id==2){
-			console.log(this.state.plateTitle)
 			this.setState({
              	plateTitle:'企业管理',
              	plateContent:'这是企业管理的详情页'

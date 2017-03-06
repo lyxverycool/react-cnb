@@ -23,17 +23,17 @@ class Main extends Component {
 };
 const route =(
 	<Router history={hashHistory}>
-       <Route path="/" component={Main}>
-       	   <IndexRoute component={First}/>
-	         <Route path="/first" component={First}/>
-	    	   <Route path="/plate" component={Plate}/>
-	    	   <Route path="/about" component={About}/>
-	    	   <Route path="/contact" component={Contact}/>
-	    	   <Route path="/fun" component={Fun}/>
-	    	   <Route path="/list" component={List}/>
-           <Route path="/details/:id" component={Details}/>  
-  	   </Route>
-  	</Router>
+   <Route path="/" component={Main}>
+ 	   <IndexRoute component={First}/>
+     <Route path="/first" component={First}/>
+	   <Route path="/plate" component={Plate}/>
+	   <Route path="/about" component={About}/>
+	   <Route path="/contact" component={Contact}/>
+	   <Route path="/fun" component={Fun}/>
+	   <Route path="/list" component={List}/>
+     <Route path="/details/:id" component={Details}/>  
+   </Route>
+  </Router>
 )
 ReactDOM.render(	
 	 <div>
