@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Common from './common';
-import Tool from './tool';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import action from '../redux/action';
 import 'whatwg-fetch';
 require('es6-promise').polyfill();
 //fuck,ios,android低版本不支持fetch,用whatwg-fetch,貌似safari不支持;
@@ -46,11 +48,11 @@ export default class List extends Component{
 					<div className="lists-text">
 						{lists.map(
 			               (list,i)=>{
-			               	  return <div className="list-text" key={i}>
-										<div className="list-author flex flex-pack-justify flex-align-center">{list.author}</div>
-										<div className="list-title flex flex-pack-justify flex-align-center">{list.title}</div>
-										<div className="list-date ">{list.date}</div>
-							   </div>		                
+			               	  return <Link key={i} to={'/listItem/'+i} className="list-text">
+									<div className="list-author flex flex-pack-justify flex-align-center">{list.author}</div>
+									<div className="list-title flex flex-pack-justify flex-align-center">{list.title}</div>
+									<div className="list-date ">{list.date}</div>
+							   </Link>		                
 			               }
 			            )}					
 					</div>

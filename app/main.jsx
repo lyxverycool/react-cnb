@@ -8,7 +8,9 @@ import Contact from './components/contact';
 import Fun from './components/fun';
 import List from './components/list';
 import Details from './components/details';
+import Listitem from './components/listitem';
 
+require ('./config/app.js');
 require ("./style/common.css");
 require ("./style/index.css");
 require ("./style/plate.css");
@@ -31,7 +33,8 @@ const route =(
 	   <Route path="/contact" component={Contact}/>
 	   <Route path="/fun" component={Fun}/>
 	   <Route path="/list" component={List}/>
-     <Route path="/details/:id" component={Details}/>  
+     <Route path="/details/:id" component={Details}/> 
+     <Route path="/listitem/:id" component={Listitem}/> 
    </Route>
   </Router>
 )

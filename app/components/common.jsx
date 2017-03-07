@@ -18,7 +18,7 @@ export default class Common extends Component{
 		return(
 			<div>
 				<header className="flex flex-pack-justify flex-align-center">
-		   	    	<a href="html/login.html">
+		   	    	<a href="#">
 		   	    		<img className="logo" src='./images/logo_common.png' />
 		   	    	</a>
 		   	    	<p>{title}</p>
