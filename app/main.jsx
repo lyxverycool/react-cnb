@@ -9,8 +9,8 @@ import Fun from './components/fun';
 import List from './components/list';
 import Details from './components/details';
 import Listitem from './components/listitem';
+import App from './config/app';
 
-require ('./config/app.js');
 require ("./style/common.css");
 require ("./style/index.css");
 require ("./style/plate.css");
@@ -23,6 +23,7 @@ class Main extends Component {
       );
     }
 };
+
 const route =(
 	<Router history={hashHistory}>
    <Route path="/" component={Main}>
@@ -38,6 +39,7 @@ const route =(
    </Route>
   </Router>
 )
+
 ReactDOM.render(	
 	 <div>
       {route}

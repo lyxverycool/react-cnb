@@ -31,36 +31,36 @@ export default class Plate extends Component{
 						<Link to="/details/1" className="boxs flex flex-v" >						
 							<b>工作台</b><br/>
 							<span>有序工作不延误<br/>有章可循不遗漏</span>
-							<img src="../images/p1.jpg"/>							
+							<img src={require("../images/p1.jpg")}/>							
 						</Link>
 						<Link to="/details/2" className="boxs flex flex-v">						
 							<b>企业管理</b><br/>
 							<span>更快导入部门信息<br/>轻松应对组织变化</span>
-							<img src="../images/p2.jpg"/>							
+							<img src={require("../images/p2.jpg")}/>							
 						</Link>
 					</div>
 					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>员工管理</b><br/>
 							<span>人事信息简单录入<br/>各类证件按需调取</span>
-							<img src="../images/p3.jpg"/>
+							<img src={require("../images/p3.jpg")}/>
 						</div>
 						<div className="boxs box-2">
 							<b>薪资福利</b><br/>
 							<span>高效薪资精确核算<br/>自定义社保无忧缴纳</span>
-							<img src="../images/p4.jpg"/>
+							<img src={require("../images/p4.jpg")}/>
 						</div>				
 					</div>
 					<div className="box flex flex-justify-around">
 						<div className="boxs box-1">
 							<b>员工家园</b><br/>
 							<span>查询互动更便捷<br/>薪福信息更透明</span>
-							<img src="../images/p5.jpg"/>
+							<img src={require("../images/p5.jpg")}/>
 						</div>
 						<div className="boxs box-2">
 							<b>权限管理</b><br/>
 							<span>多角色账号自动切换<br/>自定义账号功能</span>
-							<img src="../images/p6.jpg"/>
+							<img src={require("../images/p6.jpg")}/>
 						</div>			
 					</div>
 					<div className="list">

@@ -15,7 +15,7 @@ export default class Listitem extends Component{
 	componentDidMount(){
 		console.log(this.props.params.id)
 		let Id=this.props.params.id;
-		fetch('//offline-news-api.herokuapp.com/stories')
+		fetch('http://offline-news-api.herokuapp.com/stories')
 		  .then(function(response) {
 		    return response.json()
 		  }).then(function(res) {
@@ -31,6 +31,7 @@ export default class Listitem extends Component{
 		    console.log('parsing failed', ex);	    
 		}.bind(this))
 	}
+
 	render(){
 		let displayLoading=this.state.displayLoading;
 		let author=this.state.author;

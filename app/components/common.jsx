@@ -19,7 +19,7 @@ export default class Common extends Component{
 			<div>
 				<header className="flex flex-pack-justify flex-align-center">
 		   	    	<a href="#">
-		   	    		<img className="logo" src='./images/logo_common.png' />
+		   	    		<img className="logo" src={require('../images/logo_common.png')} />
 		   	    	</a>
 		   	    	<p>{title}</p>
 		   	    	<Link to={href} className="back">{backTo}</Link>		             

@@ -16,7 +16,7 @@ export default class Fun extends Component{
        age:11
      }
      const style={
-         padding:'40px'
+         padding:'5px'
      }
    	 return(
       <div>

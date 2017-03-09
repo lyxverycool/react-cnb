@@ -13,13 +13,13 @@ const start = {
     分类最新列表数据
 */
 const classNewList = (state = {def: start, classid: {}}, action) => {
-   
+
 }
 /*
     分类导航
 */
 const classMenuList = (state = start, action) => {
-     
+	
 }
 
 //导出方法

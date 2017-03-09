@@ -18,19 +18,19 @@ export default class First extends Component{
             </div>
             <div className="wrapper-2-middle flex flex-pack-justify">
               <div className="content">
-                <img src="images/sec_ico_1.png" />
+                <img src={require("../images/sec_ico_1.png") }/>
                 <span>企业平台</span>
               </div>
               <div className="content">
-                <img src="images/sec_ico_2.png" />
+                <img src={require("../images/sec_ico_2.png") } />
                 <span>政策实务</span>
               </div>
               <div className="content">
-                <img src="images/sec_ico_3.png" />
+                <img src={require("../images/sec_ico_3.png" ) }/>
                 <span>福利商城</span>
               </div>
               <div className="content">
-                <img src="images/sec_ico_4.png" />
+                <img src={require("../images/sec_ico_4.png") } />
                 <span>我要系列</span>
               </div>          
             </div>        
@@ -41,13 +41,13 @@ export default class First extends Component{
                 </div>            
             <div className="people flex flex-justify-around">
               <div className="content">
-                <img src="images/sec_img_1.png" />
+                <img src={require("../images/sec_img_1.png") } />
               </div>
               <div className="content">
-                <img src="images/sec_img_2.png" />
+                <img src={require("../images/sec_img_2.png") } />
               </div>
               <div className="content">
-                <img src="images/sec_img_3.png" />
+                <img src={require("../images/sec_img_3.png") } />
               </div>
             </div>        
           </div>
@@ -62,12 +62,12 @@ export default class First extends Component{
                     超过1000家行业标杆客户        
                  </div>
               <div className="row-right">
-                <img src="images/sec_img_4.png"/>
+                <img src={require("../images/sec_img_4.png") }/>
               </div>
               </div>
               <div className="row flex flex-justify-around">             
               <div className="row-right">
-                <img src="images/sec_img_5.png"/>
+                <img src={require("../images/sec_img_5.png") }/>
               </div>
               <div className="row-left ">
                 <span>线下实力服务更可靠</span>
@@ -85,14 +85,14 @@ export default class First extends Component{
                     按需自由组合，直击痛点
                  </div>
               <div className="row-right ">
-                <img src="images/sec_img_6.png"/>
+                <img src={require("../images/sec_img_6.png") }/>
               </div>
 
               </div>
               <div className="row flex flex-justify-around">
                 
               <div className="row-right">
-                <img src="images/sec_img_7.png"/>
+                <img src={require("../images/sec_img_7.png") }/>
               </div>
               <div className="row-left">
                    <span>在云端,安全有两重</span><br/>                  
@@ -106,7 +106,7 @@ export default class First extends Component{
                   我们的一些客户
                 </div>            
             <div className="last">
-              <img src="images/last.png"/>
+              <img src={require("../images/last.png") }/>
             </div>        
           </div>
         </div>  

@@ -17,7 +17,7 @@ export default class List extends Component{
 		}
 	}
 	componentDidMount(){
-		fetch('//offline-news-api.herokuapp.com/stories')
+		fetch('http://offline-news-api.herokuapp.com/stories')
 		  .then(function(response) {
 		    return response.json()
 		  }).then(function(res) {

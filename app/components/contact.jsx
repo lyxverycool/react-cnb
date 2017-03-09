@@ -22,7 +22,7 @@ export default class Contact extends Component{
 			        电子邮件:&nbsp;&nbsp;&nbsp;user@cnbexpress.com
 			      </div>
 			      <div className="wechat">
-			        <img src="../images/wechat.jpg"/>
+			        <img src={require("../images/wechat.jpg")}/>
 			      </div>
 	        </div> 
     	</div> 
