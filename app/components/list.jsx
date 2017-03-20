@@ -11,35 +11,36 @@ export default class List extends Component{
 	constructor(props){
 		super(props)
 		this.state={
-			json:[],
+			lists:[],
 			displayLoading:'block',
 			displayNetwork:'none'
 		}
-	}
-	componentDidMount(){
-		fetch('http://offline-news-api.herokuapp.com/stories')
-		  .then(function(response) {
-		    return response.json()
-		  }).then(function(res) {
-		    console.log(res)
-		    this.setState({
-					json:res,
-					displayLoading:'none'
-			})
-		  }.bind(this)).catch(function(ex) {
-		    console.log('parsing failed', ex);
-		    setTimeout(()=>{
+		this.DomLoad=(props,state)=>{
+			fetch('http://offline-news-api.herokuapp.com/stories')
+			  .then(function(response) {
+			    return response.json()
+			  }).then((res)=>{
+				console.log(res);
 				this.setState({
-			    	displayLoading:'none',
-					displayNetwork:'block'
-			    })
-		    },2000)
-		}.bind(this))
+						lists:res,
+						displayLoading:'none'
+				})
+			  }).catch((ex)=>{
+				console.log('parsing failed', ex);
+			    setTimeout(()=>{
+					this.setState({
+				    	displayLoading:'none',
+						displayNetwork:'block'
+				    })
+			    },2000)
+			  })			
+		}
+	}
+	componentDidMount(props,state){
+		this.DomLoad(this.props,this.state)
 	}
 	render() {
-		let lists=this.state.json;
-		let displayLoading=this.state.displayLoading;
-		let displayNetwork=this.state.displayNetwork;
+		let {lists,displayNetwork,displayLoading}=this.state;
 		return (
 			<div>
 				<div className="loading" style={{display:displayLoading}}></div>
@@ -51,7 +52,7 @@ export default class List extends Component{
 			               	  return <Link key={i} to={'/listItem/'+i} className="list-text">
 									<div className="list-author flex flex-pack-justify flex-align-center">{list.author}</div>
 									<div className="list-title flex flex-pack-justify flex-align-center">{list.title}</div>
-									<div className="list-date ">{list.date}</div>
+									<div className="list-date">{list.date}</div>
 							   </Link>		                
 			               }
 			            )}					

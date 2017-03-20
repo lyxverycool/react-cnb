@@ -8,11 +8,14 @@ import Contact from '../components/contact';
 import Fun from '../components/fun';
 import List from '../components/list';
 import Details from '../components/details';
+import Listitem from '../components/listitem';
+import App from '../config/app';
+App();
 
 require ("../style/common.css");
 require ("../style/index.css");
 require ("../style/plate.css");
-
+require ('../style/test.scss')
 
 class Main extends Component {
     render() {
@@ -31,11 +34,13 @@ const route =(
 	    	   <Route path="/contact" component={Contact}/>
 	    	   <Route path="/fun" component={Fun}/>
 	    	   <Route path="/list" component={List}/>
-           <Route path="/details" component={Details}/>  
+           <Route path="/listitem/:id" component={Listitem}/>
+           <Route path="/details/:id" component={Details}/>  
   	   </Route>
   	</Router>
 )
 
+export default route;
 
 
 

@@ -11,33 +11,32 @@ export default class Listitem extends Component{
 			body:'',
 			date:''
 		}
+		this.DomLoad=()=>{
+			console.log(this.props.params.id)
+			let Id=this.props.params.id;
+			fetch('http://offline-news-api.herokuapp.com/stories')
+			  .then(function(response) {
+			    return response.json()
+			  }).then(function(res) {
+			    console.log(res[Id])
+				this.setState({
+					displayLoading:'none',
+					author:res[Id].author,
+					title:res[Id].title,
+					body:res[Id].body,
+					date:res[Id].date
+				})
+			  }.bind(this)).catch(function(ex) {
+			    console.log('parsing failed', ex);	    
+			}.bind(this))
+		}
 	}
 	componentDidMount(){
-		console.log(this.props.params.id)
-		let Id=this.props.params.id;
-		fetch('http://offline-news-api.herokuapp.com/stories')
-		  .then(function(response) {
-		    return response.json()
-		  }).then(function(res) {
-		    console.log(res[Id])
-			this.setState({
-				displayLoading:'none',
-				author:res[Id].author,
-				title:res[Id].title,
-				body:res[Id].body,
-				date:res[Id].date
-			})
-		  }.bind(this)).catch(function(ex) {
-		    console.log('parsing failed', ex);	    
-		}.bind(this))
+		this.DomLoad()
 	}
 
 	render(){
-		let displayLoading=this.state.displayLoading;
-		let author=this.state.author;
-		let title =this.state.title;
-		let body =this.state.body;
-		let date =this.state.date;
+		let {author,title,date,body,displayLoading}=this.state;
 		return (
 			<div>
 				<div className="loading" style={{display:displayLoading}}></div>

@@ -18,6 +18,7 @@ export default class Fun extends Component{
      const style={
          padding:'5px'
      }
+
    	 return(
       <div>
         <Common title="功能组件"/>
@@ -26,7 +27,7 @@ export default class Fun extends Component{
           <List {...list}/>
           <Click />
           <Hobbies />
-          <Opacity />
+          <input type='file' accept="image/*" />
         </div>
       </div>
    	 )

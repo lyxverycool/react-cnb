@@ -1,4 +1,4 @@
-export default function App(){
+export default function (){
 	var docEl = document.documentElement,
 		    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
 		    recalc = function() {
@@ -15,5 +15,6 @@ export default function App(){
 	window.addEventListener(resizeEvt, recalc, false);
 	document.addEventListener('DOMContentLoaded', recalc, false);
 }
+
 	
 		  
