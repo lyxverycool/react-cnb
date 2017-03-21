@@ -1,44 +1,52 @@
-import fetch from 'isomorphic-fetch';
+import { combineReducers } from 'redux';
+import {counterAction,RECEIVE_POSTS} from './action';
+const count=5;
 
-const start = {
-   	displayLoading: 'none',
-    displayNetwork: 'none', 
-    json: null,
-};
-
-/*
-    分类最新列表数据
-*/
-
-
-// function fetchApi(){
-//     fetch('http://offline-news-api.herokuapp.com/stories')
-//       .then(function(response) {
-//         return response.json()
-//       }).then((res)=>{
-//         console.log(res);
-//         return res;
-//       }).catch((ex)=>{
-//         console.log('parsing failed', ex);
-//     })
-// }
-// fetchApi()  
-     
-const classMenuList = (state = start,action,res) => {
-    switch (action.type) {
-        case 'GET_DATA_START': //开始加载
-           return (state, {loadMsg: '开始加载', data:res, loadState: 2});
-        case 'GET_DATA_SUCCESS': //加载成功
-            return (state,{loadMsg: '加载成功', data: action.state, loadState: 2});
-        case 'GET_DATA_ERROR': //加载失败
-            return (state, {loadMsg: '加载失败', data: action.state, loadState: 2});
-        default:
-            return (state,{displayLoading: 'none',json:res,  displayNetwork: 'block',});
-    }
-    
+function counter(state = { count: count}, action) {
+  const count = state.count
+  switch (action.type) {
+    case 'increase':
+      return { count: count + 1 }
+    case 'decrease':
+      return { count: count - 1 }
+    default:
+      return state
+  }
 }
 
 
-//导出方法
-export default {classMenuList};
 
+function posts(state = {
+  items: []
+}, action) {
+  switch (action.type) {
+
+    case RECEIVE_POSTS:
+      // Object.assign是ES6的一个语法。合并对象，将对象合并为一个，前后相同的话，后者覆盖强者。详情可以看这里
+      //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+      return Object.assign({}, state, {
+        items: action.posts //数据都存在了这里
+      })
+    default:
+      return state
+  }
+}
+
+//废弃、接收到、开始接受新闻后，将state.postsByReddit设为相关参数
+function postsByReddit(state = { }, action) {
+  switch (action.type) {
+    case RECEIVE_POSTS:
+      return Object.assign({}, state, {
+        [action.reddit]: posts(state[action.reddit], action)
+      })
+    default:
+      return state
+  }
+}
+
+// 将所有的reducer结合为一个,传给store
+const rootReducer = combineReducers({
+  postsByReddit,counter
+})
+
+export default rootReducer

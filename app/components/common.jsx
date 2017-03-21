@@ -8,12 +8,13 @@ export default class Common extends Component{
 	render(){
 		let {title,backTo,href}=this.props;
 		const lists=[
-			{text:"HOME",title:'首页',link:"/first"},
-			{title:'企业平台',link:"/plate"},
-			{title:'关于我们',link:"/about"},
-			{title:'联系我们',link:"/contact"},
+			{text:'HOME',title:'首页',link:'/first'},
+			{title:'企业平台',link:'/plate'},
+			{title:'关于我们',link:'/about'},
+			{title:'联系我们',link:'/contact'},
 			{title:'功能组件',link:'/fun'},
-			{title:'列表页',link:'/list'}
+			{title:'列表页',link:'/list'},
+			{title:'redux',link:'/test'}
 		];
 		return(
 			<div>

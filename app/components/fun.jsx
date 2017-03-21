@@ -5,7 +5,7 @@ import Click from './other/click';
 import Hobbies from './other/hobbies';
 import Opacity from './other/opacity';
 import Common from './common';
-
+import Counter from './other/counter'
 export default class Fun extends Component{
    constructor(){
    	 super()
@@ -24,6 +24,7 @@ export default class Fun extends Component{
         <Common title="功能组件"/>
         <div className="container" style={style}>           
           <Change />
+          <Counter />
           <List {...list}/>
           <Click />
           <Hobbies />

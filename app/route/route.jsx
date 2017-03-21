@@ -9,13 +9,14 @@ import Fun from '../components/fun';
 import List from '../components/list';
 import Details from '../components/details';
 import Listitem from '../components/listitem';
+import Test from '../components/test'
 import App from '../config/app';
 App();
 
 require ("../style/common.css");
 require ("../style/index.css");
 require ("../style/plate.css");
-require ('../style/test.scss')
+require ('../style/test.scss');
 
 class Main extends Component {
     render() {
@@ -24,6 +25,7 @@ class Main extends Component {
         );
     }
 };
+
 const route =(
 	<Router history={hashHistory}>
        <Route path="/" component={Main}>
@@ -34,6 +36,7 @@ const route =(
 	    	   <Route path="/contact" component={Contact}/>
 	    	   <Route path="/fun" component={Fun}/>
 	    	   <Route path="/list" component={List}/>
+           <Route path="/test" component={Test}/>
            <Route path="/listitem/:id" component={Listitem}/>
            <Route path="/details/:id" component={Details}/>  
   	   </Route>
