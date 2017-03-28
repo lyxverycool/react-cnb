@@ -6,23 +6,14 @@ import Common from './common';
 class Test extends Component {
   constructor(props) {
     super(props)
-    this.select=()=>{
-      let myselect=document.getElementById('select');
-      let index=myselect.selectedIndex ;
-      let val=myselect.options[index].value;
-      const { dispatch} = this.props
-      console.log(val);
-      if(val=='frontend'){
-        dispatch(fetchPostsIfNeeded('frontend'))
-      }else if(val=='reactjs'){
-        console.log(111)
-        dispatch(fetchPostsIfNeeded('reactjs'))
-      }
+    this.click=(props)=>{
+      let {dispatch}=this.props
+      dispatch(fetchPostsIfNeeded('reactjs'))
     }
   }
 
   //初始化渲染后触发
-
+  
 
   render() {
     const { posts } = this.props
@@ -31,10 +22,7 @@ class Test extends Component {
       <div>     
         <Common title="redux"/>
         <div className="container">
-          <select id='select' className='select' onChange={this.select}>
-            <option>frontend</option>
-            <option>reactjs</option>
-          </select>
+          <button onClick={this.click}>惦记我</button>
           { 
            posts.map((post, i) =>
               <li key={i}>{post.title}</li>

@@ -16,14 +16,9 @@ function counter(state = { count: count}, action) {
 
 
 
-function posts(state = {
-  items: []
-}, action) {
+function posts(state = {items: []}, action) {
   switch (action.type) {
-
     case RECEIVE_POSTS:
-      // Object.assign是ES6的一个语法。合并对象，将对象合并为一个，前后相同的话，后者覆盖强者。详情可以看这里
-      //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
       return Object.assign({}, state, {
         items: action.posts //数据都存在了这里
       })

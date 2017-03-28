@@ -39,6 +39,12 @@ export default class List extends Component{
 	componentDidMount(props,state){
 		this.DomLoad(this.props,this.state)
 	}
+	componentDidUpdate(){
+		this.click=()=>{
+			console.log('11')
+			this.DomLoad(this.props,this.state)
+		}
+	}
 	render() {
 		let {lists,displayNetwork,displayLoading}=this.state;
 		return (
@@ -46,6 +52,7 @@ export default class List extends Component{
 				<div className="loading" style={{display:displayLoading}}></div>
 				<Common title="列表页"/>
 				<div className="container">
+					<button onClick={this.click}>点击</button>
 					<div className="lists-text">
 						{lists.map(
 			               (list,i)=>{

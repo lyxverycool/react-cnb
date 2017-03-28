@@ -9,7 +9,7 @@ export class  Counter  extends Component{
 		super()
 	}	
 	render() {
-	    const { value, onIncreaseClick,onDecreaseClick } = this.props
+	    const { value, onIncreaseClick,onDecreaseClick } = this.props;
 	    return (
 	      <div>
 	      	<button onClick={onDecreaseClick}>Decrease</button>
@@ -22,9 +22,9 @@ export class  Counter  extends Component{
 
 // Map Redux state to component props
 function mapStateToProps(state) {
-  console.log(state)
+  console.log(state.counter.count)
   return {
-    value: state.count
+    value: state.counter.count
   }
 }
 

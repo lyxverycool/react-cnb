@@ -1,6 +1,5 @@
 import React,{Component} from "react";
 import Change from './other/change';
-import List from './other/list';
 import Click from './other/click';
 import Hobbies from './other/hobbies';
 import Opacity from './other/opacity';
@@ -25,7 +24,6 @@ export default class Fun extends Component{
         <div className="container" style={style}>           
           <Change />
           <Counter />
-          <List {...list}/>
           <Click />
           <Hobbies />
           <input type='file' accept="image/*" />
